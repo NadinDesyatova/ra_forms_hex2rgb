@@ -17,7 +17,7 @@ export const ColorWidget = () => {
   const handler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const {value} = e.target;
-    if (value.length !== 7 || value.slice(0, 1) !== "#") return;
+    if (value.length < 7 || value.slice(0, 1) !== "#") return;
 
     const convertedValue: Array<number | string> | string = 
       hexToRgb(value).every(item => typeof item === "number")
@@ -34,7 +34,7 @@ export const ColorWidget = () => {
     }>
       <form>
         <label htmlFor="hex" className="text text_tittle">HEX ={'>'} rgb</label>
-        <input type="text" id="hex" name="hex" onChange={handler} className="input_hex"/>
+        <input type="text" maxLength={7} id="hex" name="hex" onChange={handler} className="input_hex"/>
         <div className="text text_rgb" style={
           {
             backgroundColor: `rgba(${typeof colorRGB === "object" ? colorRGB.join(", ") + ", 1" : "255, 201, 102, 1" })`,
