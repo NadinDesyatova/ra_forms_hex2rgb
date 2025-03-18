@@ -1,0 +1,46 @@
+body,
+html {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  padding: 0;
+  overflow-x: hidden;
+}
+ 
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 210px;
+}
+
+.text {
+  margin-top: 2px;
+  padding: 20px 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.text_title {
+  font-size: 18px;
+}
+
+.input_hex {
+  padding: 20px 0;
+  border-color: rgba(98, 92, 92, .2);
+  text-align: center;
+  font-size: 19px;
+}
+
+.input_hex:focus {
+  outline: 2px solid rgb(122, 203, 243);
+}
